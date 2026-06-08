@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrotóxicos no Paraná | Impactos e Alternativas</title>
-    <!-- Chama o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte Google para uma tipografia mais agradável -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,7 +28,6 @@
 
         <!-- Grade de 2 colunas -->
         <div class="grid-2col">
-            <!-- Causas -->
             <section class="card">
                 <h2>📊 Causas do uso intensivo</h2>
                 <ul>
@@ -41,7 +38,6 @@
                 </ul>
             </section>
 
-            <!-- Consequências -->
             <section class="card">
                 <h2>⚠️ Impactos na saúde</h2>
                 <ul>
@@ -53,7 +49,7 @@
             </section>
         </div>
 
-        <!-- Impacto Ambiental - card largo -->
+        <!-- Impacto Ambiental -->
         <section class="card">
             <h2>🌎 Impactos ambientais</h2>
             <div class="impactos-grid">
@@ -72,7 +68,7 @@
             </div>
         </section>
 
-        <!-- Soluções e caminhos sustentáveis -->
+        <!-- Soluções -->
         <section class="card">
             <h2>🌱 Soluções e caminhos sustentáveis</h2>
             <p>A transição para um modelo equilibrado exige a adoção de práticas agroecológicas e maior rigor institucional.</p>
@@ -92,10 +88,41 @@
             </div>
         </section>
 
-        <!-- Botão interativo com JavaScript -->
+        <!-- Botão interativo -->
         <div class="btn-container">
             <button id="btnBioestimulantes">🌿 Saiba mais sobre bioestimulantes</button>
         </div>
+
+        <!-- ============================================ -->
+        <!-- SEÇÃO DO QUIZ - INTEGRADA -->
+        <!-- ============================================ -->
+        <section class="quiz-section">
+            <div class="card quiz-card">
+                <div class="quiz-header">
+                    <h2>🧠 Teste seus conhecimentos</h2>
+                    <p>Responda as perguntas abaixo sobre agrotóxicos e sustentabilidade</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div id="question-container">
+                        <p id="question-text">Carregando pergunta...</p>
+                        <div id="answer-buttons" class="btn-grid"></div>
+                    </div>
+                    
+                    <div id="controls">
+                        <button id="next-btn" class="next-btn hide">Próxima Pergunta →</button>
+                    </div>
+                    
+                    <div id="result-container" class="hide">
+                        <div class="result-box">
+                            <h3>📊 Resultado Final</h3>
+                            <p id="score-text"></p>
+                            <button id="restart-quiz" class="restart-btn">🔄 Recomeçar Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -114,7 +141,6 @@
         </div>
     </footer>
 
-    <!-- Chama o arquivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 </html>
