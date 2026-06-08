@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semeando Consciência | Do Campo à Cidade</title>
+    <meta name="description" content="Uma iniciativa educativa inspirada no conceito Agrinho para conscientizar sobre o uso de agrotóxicos e promover a conexão saudável entre o campo e a cidade.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+</head>
+<body>
+
+    <div class="accessibility-bar" role="complementary" aria-label="Controles de Acessibilidade">
+        <div class="container-flex">
+            <button id="btn-high-contrast" aria-label="Alternar Alto Contraste">
+                <i class="ph ph-contrast" aria-hidden="true"></i> Alto Contraste
+            </button>
+            <div class="font-controls">
+                <button id="btn-font-decrease" aria-label="Diminuir tamanho do texto">A-</button>
+                <button id="btn-font-increase" aria-label="Aumentar tamanho do texto">A+</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <nav class="nav-container" role="navigation" aria-label="Menu Principal">
+            <a href="#" class="logo" aria-label="Semeando Consciência - Página Inicial">
+                <span class="logo-accent">Semeando</span>Consciência
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problema">O Problema</a></li>
+                <li><a href="#solucao">A Solução</a></li>
+                <li><a href="#conexao">Campo e Cidade</a></li>
+                <li><a href="#dados">Dados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 id="hero-title" class="reveal">O alimento que nos nutre também pode nos adoecer?</h1>
+                <p class="reveal delay-1">Conectando a sabedoria do campo à consciência da cidade para transformar nossa relação com a terra e com o prato de cada dia.</p>
+                <a href="#cta-section" class="btn btn-primary reveal delay-2" role="button">Faça Parte da Mudança</a>
+            </div>
+        </section>
+
+        <section id="problema" class="section-padding" aria-labelledby="problema-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="problema-title">O Desafio Invisível</h2>
+                    <p>O uso excessivo de defensivos químicos afeta o solo, a água e chega silenciosamente à mesa das famílias urbanas.</p>
+                </div>
+                <div id="grid-problemas" class="grid-3-col"></div>
+            </div>
+        </section>
+
+        <section id="solucao" class="section-padding bg-light" aria-labelledby="solucao-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="solucao-title">Caminhos Alternativos</h2>
+                    <p>A agroecologia e as práticas sustentáveis provam que é possível produzir em escala respeitando a vida.</p>
+                </div>
+                
+                <div class="tabs-container">
+                    <div class="tab-buttons" role="tablist" aria-label="Soluções Sustentáveis">
+                        </div>
+                    <div id="tab-panels-container">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conexao" class="section-padding integration-section" aria-labelledby="conexao-title">
+            <div class="container grid-2-col-align">
+                <div class="image-placeholder reveal" role="img" aria-label="Ilustração da união entre o ambiente rural e urbano, mostrando uma feira de orgânicos na cidade abastecida direto pelo produtor">
+                    <div class="placeholder-visual"><i class="ph ph-plant-bold"></i></div>
+                </div>
