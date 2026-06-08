@@ -3,77 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semeando Consciência | Do Campo à Cidade</title>
-    <meta name="description" content="Uma iniciativa educativa inspirada no conceito Agrinho para conscientizar sobre o uso de agrotóxicos e promover a conexão saudável entre o campo e a cidade.">
+    <title>Agrotóxicos no Paraná | Impactos e Alternativas</title>
+    <!-- Chama o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+    <!-- Fonte Google para uma tipografia mais agradável -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="accessibility-bar" role="complementary" aria-label="Controles de Acessibilidade">
-        <div class="container-flex">
-            <button id="btn-high-contrast" aria-label="Alternar Alto Contraste">
-                <i class="ph ph-contrast" aria-hidden="true"></i> Alto Contraste
-            </button>
-            <div class="font-controls">
-                <button id="btn-font-decrease" aria-label="Diminuir tamanho do texto">A-</button>
-                <button id="btn-font-increase" aria-label="Aumentar tamanho do texto">A+</button>
-            </div>
+    <header>
+        <div class="container header-container">
+            <h1>🌿 Agrotóxicos no Paraná</h1>
+            <p class="subtitle">Destaque produtivo e a urgência de um novo modelo agrícola</p>
         </div>
-    </div>
-
-    <header class="main-header">
-        <nav class="nav-container" role="navigation" aria-label="Menu Principal">
-            <a href="#" class="logo" aria-label="Semeando Consciência - Página Inicial">
-                <span class="logo-accent">Semeando</span>Consciência
-            </a>
-            <ul class="nav-links">
-                <li><a href="#problema">O Problema</a></li>
-                <li><a href="#solucao">A Solução</a></li>
-                <li><a href="#conexao">Campo e Cidade</a></li>
-                <li><a href="#dados">Dados</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero-section" aria-labelledby="hero-title">
-            <div class="hero-overlay"></div>
-            <div class="hero-content container">
-                <h1 id="hero-title" class="reveal">O alimento que nos nutre também pode nos adoecer?</h1>
-                <p class="reveal delay-1">Conectando a sabedoria do campo à consciência da cidade para transformar nossa relação com a terra e com o prato de cada dia.</p>
-                <a href="#cta-section" class="btn btn-primary reveal delay-2" role="button">Faça Parte da Mudança</a>
+    <main class="container">
+        <!-- Seção de Destaque -->
+        <section class="destaque">
+            <div class="card destaque-card">
+                <h2>Paraná: 2º maior consumidor do Brasil</h2>
+                <p>O estado responde por aproximadamente <strong>16% do consumo total de agrotóxicos</strong> do país, inserindo-se no centro do debate sobre sustentabilidade, saúde pública e preservação ambiental.</p>
+                <p>O Brasil tornou-se o maior consumidor mundial, com um aumento de <strong>700% no uso de ingredientes ativos</strong> nos últimos 40 anos, enquanto a área plantada cresceu apenas 78%.</p>
             </div>
         </section>
 
-        <section id="problema" class="section-padding" aria-labelledby="problema-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="problema-title">O Desafio Invisível</h2>
-                    <p>O uso excessivo de defensivos químicos afeta o solo, a água e chega silenciosamente à mesa das famílias urbanas.</p>
+        <!-- Grade de 2 colunas -->
+        <div class="grid-2col">
+            <!-- Causas -->
+            <section class="card">
+                <h2>📊 Causas do uso intensivo</h2>
+                <ul>
+                    <li><strong>Modelo de produção:</strong> Dependência tecnológica da Revolução Verde.</li>
+                    <li><strong>Monoculturas extensivas:</strong> Soja e milho demandam alto volume de agroquímicos.</li>
+                    <li><strong>Transgênicos:</strong> Círculo vicioso que gera pragas mais resistentes.</li>
+                    <li><strong>Fatores econômicos:</strong> Lucro imediato da safra sobrepõe-se à classificação toxicológica.</li>
+                </ul>
+            </section>
+
+            <!-- Consequências -->
+            <section class="card">
+                <h2>⚠️ Impactos na saúde</h2>
+                <ul>
+                    <li>Associação a <strong>câncer, anomalias congênitas e distúrbios neurológicos</strong>.</li>
+                    <li>Resíduos de agrotóxicos detectados em sangue, urina e <strong>leite materno</strong>.</li>
+                    <li>Intoxicações agudas e crônicas em trabalhadores rurais sem EPI adequado.</li>
+                    <li>Alimentos com níveis insatisfatórios de contaminação (ANVISA).</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Impacto Ambiental - card largo -->
+        <section class="card">
+            <h2>🌎 Impactos ambientais</h2>
+            <div class="impactos-grid">
+                <div>
+                    <h3>💧 Recursos hídricos</h3>
+                    <p>Agrotóxicos atingem rios, lagos e lençóis freáticos por lixiviação, comprometendo a água potável e a biota aquática (biomagnificação).</p>
                 </div>
-                <div id="grid-problemas" class="grid-3-col"></div>
+                <div>
+                    <h3>🐝 Desequilíbrio ecológico</h3>
+                    <p>Mortandade de polinizadores (abelhas) e predadores naturais que controlam pragas biologicamente.</p>
+                </div>
+                <div>
+                    <h3>🌬️ Deriva e solo</h3>
+                    <p>O vento leva o veneno a áreas vizinhas, poluindo o ar e reduzindo a variabilidade genética das espécies.</p>
+                </div>
             </div>
         </section>
 
-        <section id="solucao" class="section-padding bg-light" aria-labelledby="solucao-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="solucao-title">Caminhos Alternativos</h2>
-                    <p>A agroecologia e as práticas sustentáveis provam que é possível produzir em escala respeitando a vida.</p>
+        <!-- Soluções e caminhos sustentáveis -->
+        <section class="card">
+            <h2>🌱 Soluções e caminhos sustentáveis</h2>
+            <p>A transição para um modelo equilibrado exige a adoção de práticas agroecológicas e maior rigor institucional.</p>
+            <div class="solucoes-lista">
+                <div class="solucao-item">
+                    <strong>🧪 Defensivos alternativos:</strong> Caldas Bordalesa e Sulfocálcica, extratos de alho, fumo, nim e agentes de biocontrole (fungos e bactérias).
                 </div>
-                
-                <div class="tabs-container">
-                    <div class="tab-buttons" role="tablist" aria-label="Soluções Sustentáveis">
-                        </div>
-                    <div id="tab-panels-container">
-                        </div>
+                <div class="solucao-item">
+                    <strong>⚡ Bioestimulantes:</strong> Aumentam a fotossíntese e a resistência natural das plantas, reduzindo a necessidade de venenos químicos.
+                </div>
+                <div class="solucao-item">
+                    <strong>📚 Educação e fiscalização:</strong> Capacitação de manipuladores, proibição de princípios ativos já banidos na Europa e rígida fiscalização ambiental.
+                </div>
+                <div class="solucao-item">
+                    <strong>🏛️ Políticas públicas:</strong> Notificação de intoxicações e promoção da saúde (iniciativas da Secretaria da Saúde do Paraná).
                 </div>
             </div>
         </section>
 
-        <section id="conexao" class="section-padding integration-section" aria-labelledby="conexao-title">
-            <div class="container grid-2-col-align">
-                <div class="image-placeholder reveal" role="img" aria-label="Ilustração da união entre o ambiente rural e urbano, mostrando uma feira de orgânicos na cidade abastecida direto pelo produtor">
-                    <div class="placeholder-visual"><i class="ph ph-plant-bold"></i></div>
-                </div>
+        <!-- Botão interativo com JavaScript -->
+        <div class="btn-container">
+            <button id="btnBioestimulantes">🌿 Saiba mais sobre bioestimulantes</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Referências e fontes confiáveis:</strong></p>
+            <ul class="refs-list">
+                <li><a href="#" target="_blank">Embrapa - Agrotóxicos no Brasil</a></li>
+                <li><a href="#" target="_blank">Portal da Agricultura do Paraná</a></li>
+                <li><a href="#" target="_blank">Fundação Heinrich Böll</a></li>
+                <li><a href="#" target="_blank">CiOrgânicos - Bioestimulantes</a></li>
+                <li><a href="#" target="_blank">Secretaria da Saúde do Paraná</a></li>
+                <li><a href="#" target="_blank">UFMG - Impactos dos Agrotóxicos</a></li>
+                <li><a href="#" target="_blank">Cartilha Defensivos Alternativos (Pesagro-Rio)</a></li>
+            </ul>
+            <p class="footer-note">© 2025 - Página criada para conscientização sobre o uso responsável de agrotóxicos e promoção da agroecologia.</p>
+        </div>
+    </footer>
+
+    <!-- Chama o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
