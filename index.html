@@ -3,180 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrotóxicos no Paraná | Impactos e Alternativas</title>
+    <title>EcoFuture | Agrotóxicos no Paraná</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Background futurista -->
+    <div class="noise-bg"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
 
-    <header>
-        <div class="container header-container">
-            <h1>🌿 Agrotóxicos no Paraná</h1>
-            <p class="subtitle">Destaque produtivo e a urgência de um novo modelo agrícola</p>
+    <header class="glass-header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-recycle"></i>
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h1>ECO<span class="highlight">FUTURE</span></h1>
+            </div>
+            <p class="tagline">CONSCIENTIZAÇÃO PARA UM FUTURO SUSTENTÁVEL</p>
         </div>
     </header>
 
     <main class="container">
-        <!-- Seção de Destaque -->
-        <section class="destaque">
-            <div class="card destaque-card">
-                <h2>Paraná: 2º maior consumidor do Brasil</h2>
-                <p>O estado responde por aproximadamente <strong>16% do consumo total de agrotóxicos</strong> do país, inserindo-se no centro do debate sobre sustentabilidade, saúde pública e preservação ambiental.</p>
-                <p>O Brasil tornou-se o maior consumidor mundial, com um aumento de <strong>700% no uso de ingredientes ativos</strong> nos últimos 40 anos, enquanto a área plantada cresceu apenas 78%.</p>
+        <!-- Hero Section com Lettering -->
+        <section class="hero glass-card">
+            <div class="hero-badge">
+                <span><i class="fas fa-chart-line"></i> ALERTA AMBIENTAL</span>
+                <span class="badge-icon">⚠️</span>
+            </div>
+            <div class="hero-lettering">
+                <h2>O Paraná ocupa posição de <span class="gradient-text">destaque</span> e <span class="gradient-text">preocupação</span></h2>
+                <div class="hero-doodle">🌿 🌎 🌱</div>
+            </div>
+            <p class="hero-stats"><i class="fas fa-chart-simple"></i> 2º maior consumidor de agrotóxicos do Brasil • <strong>16%</strong> do consumo nacional</p>
+            <div class="hero-stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="700">0</div>
+                    <div class="stat-label">% aumento em 40 anos</div>
+                    <div class="stat-icon">📈</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="78">0</div>
+                    <div class="stat-label">% crescimento área plantada</div>
+                    <div class="stat-icon">🌾</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="16">0</div>
+                    <div class="stat-label">% consumo nacional</div>
+                    <div class="stat-icon">🇧🇷</div>
+                </div>
             </div>
         </section>
 
-        <!-- Grade de 2 colunas -->
+        <!-- Problemática Principal -->
+        <section class="glass-card">
+            <div class="card-header">
+                <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <h3>A Problemática e suas Causas</h3>
+                <span class="lettering-tag">⚠️ ATENÇÃO</span>
+            </div>
+            <p class="card-text">O Brasil se tornou o <strong>maior consumidor mundial de agrotóxicos</strong>, com um aumento de <strong>700%</strong> no consumo de ingredientes ativos nos últimos quarenta anos, enquanto a área agrícola cresceu apenas <strong>78%</strong> no mesmo período.</p>
+            <div class="causes-grid" id="causes-grid">
+                <div class="cause-card" data-concept="modelo">
+                    <i class="fas fa-industry"></i>
+                    <span>Modelo de Produção</span>
+                    <div class="concept-tooltip">Clique para saber mais</div>
+                </div>
+                <div class="cause-card" data-concept="monocultura">
+                    <i class="fas fa-tractor"></i>
+                    <span>Monoculturas Extensivas</span>
+                    <div class="concept-tooltip">Clique para saber mais</div>
+                </div>
+                <div class="cause-card" data-concept="transgenicos">
+                    <i class="fas fa-dna"></i>
+                    <span>Transgênicos</span>
+                    <div class="concept-tooltip">Clique para saber mais</div>
+                </div>
+                <div class="cause-card" data-concept="economicos">
+                    <i class="fas fa-coins"></i>
+                    <span>Fatores Econômicos</span>
+                    <div class="concept-tooltip">Clique para saber mais</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consequências: Saúde e Meio Ambiente -->
         <div class="grid-2col">
-            <section class="card">
-                <h2>📊 Causas do uso intensivo</h2>
-                <ul>
-                    <li><strong>Modelo de produção:</strong> Dependência tecnológica da Revolução Verde.</li>
-                    <li><strong>Monoculturas extensivas:</strong> Soja e milho demandam alto volume de agroquímicos.</li>
-                    <li><strong>Transgênicos:</strong> Círculo vicioso que gera pragas mais resistentes.</li>
-                    <li><strong>Fatores econômicos:</strong> Lucro imediato da safra sobrepõe-se à classificação toxicológica.</li>
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Impactos na Saúde Humana</h3>
+                    <span class="lettering-tag">🚨 URGENTE</span>
+                </div>
+                <ul class="eco-list">
+                    <li><i class="fas fa-bacteria"></i> <strong>Doenças Graves:</strong> Câncer, anomalias congênitas e distúrbios neurológicos</li>
+                    <li><i class="fas fa-baby-carriage"></i> <strong>Presença em Fluidos:</strong> Detectado em sangue, urina e leite materno</li>
+                    <li><i class="fas fa-hard-hat"></i> <strong>Risco Ocupacional:</strong> Trabalhadores rurais sem EPI adequado</li>
                 </ul>
-            </section>
+                <div class="concept-btn-small" data-concept="saude">📖 Explicação detalhada</div>
+            </div>
 
-            <section class="card">
-                <h2>⚠️ Impactos na saúde</h2>
-                <ul>
-                    <li>Associação a <strong>câncer, anomalias congênitas e distúrbios neurológicos</strong>.</li>
-                    <li>Resíduos de agrotóxicos detectados em sangue, urina e <strong>leite materno</strong>.</li>
-                    <li>Intoxicações agudas e crônicas em trabalhadores rurais sem EPI adequado.</li>
-                    <li>Alimentos com níveis insatisfatórios de contaminação (ANVISA).</li>
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Impactos Ambientais</h3>
+                    <span class="lettering-tag">🌍 ECOLOGIA</span>
+                </div>
+                <ul class="eco-list">
+                    <li><i class="fas fa-water"></i> <strong>Contaminação de Recursos Hídricos:</strong> Rios, lagos e lençóis freáticos</li>
+                    <li><i class="fas fa-bug"></i> <strong>Desequilíbrio Ecológico:</strong> Mortandade de polinizadores (abelhas)</li>
+                    <li><i class="fas fa-wind"></i> <strong>Degradação do Solo e Ar:</strong> Deriva contamina áreas vizinhas</li>
                 </ul>
-            </section>
+                <div class="concept-btn-small" data-concept="ambiental">📖 Explicação detalhada</div>
+            </div>
         </div>
 
-        <!-- Impacto Ambiental -->
-        <section class="card">
-            <h2>🌎 Impactos ambientais</h2>
-            <div class="impactos-grid">
-                <div>
-                    <h3>💧 Recursos hídricos</h3>
-                    <p>Agrotóxicos atingem rios, lagos e lençóis freáticos por lixiviação, comprometendo a água potável e a biota aquática (biomagnificação).</p>
-                </div>
-                <div>
-                    <h3>🐝 Desequilíbrio ecológico</h3>
-                    <p>Mortandade de polinizadores (abelhas) e predadores naturais que controlam pragas biologicamente.</p>
-                </div>
-                <div>
-                    <h3>🌬️ Deriva e solo</h3>
-                    <p>O vento leva o veneno a áreas vizinhas, poluindo o ar e reduzindo a variabilidade genética das espécies.</p>
-                </div>
+        <!-- Soluções - Seção com Botões Interativos -->
+        <section class="glass-card">
+            <div class="card-header">
+                <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Soluções e Caminhos Sustentáveis</h3>
+                <span class="lettering-tag">✨ SOLUÇÕES</span>
+            </div>
+            <p class="card-text">A transição para um modelo equilibrado exige a adoção de práticas agroecológicas e maior rigor institucional.</p>
+            <div class="solutions-grid" id="solutions-grid">
+                <button class="solution-btn" data-concept="alternativos">
+                    <i class="fas fa-flask"></i>
+                    <span>Defensivos Alternativos</span>
+                    <i class="fas fa-question-circle info-icon"></i>
+                </button>
+                <button class="solution-btn" data-concept="bioestimulantes">
+                    <i class="fas fa-bolt"></i>
+                    <span>Bioestimulantes</span>
+                    <i class="fas fa-question-circle info-icon"></i>
+                </button>
+                <button class="solution-btn" data-concept="educacao">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Educação e Fiscalização</span>
+                    <i class="fas fa-question-circle info-icon"></i>
+                </button>
+                <button class="solution-btn" data-concept="politicas">
+                    <i class="fas fa-landmark"></i>
+                    <span>Políticas Públicas</span>
+                    <i class="fas fa-question-circle info-icon"></i>
+                </button>
             </div>
         </section>
 
-        <!-- Soluções -->
-        <section class="card">
-            <h2>🌱 Soluções e caminhos sustentáveis</h2>
-            <p>A transição para um modelo equilibrado exige a adoção de práticas agroecológicas e maior rigor institucional.</p>
-            <div class="solucoes-lista">
-                <div class="solucao-item">
-                    <strong>🧪 Defensivos alternativos:</strong> Caldas Bordalesa e Sulfocálcica, extratos de alho, fumo, nim e agentes de biocontrole (fungos e bactérias).
+        <!-- Modal para Explicações -->
+        <div id="concept-modal" class="modal">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h3 id="modal-title">Título</h3>
+                    <span class="modal-close">&times;</span>
                 </div>
-                <div class="solucao-item">
-                    <strong>⚡ Bioestimulantes:</strong> Aumentam a fotossíntese e a resistência natural das plantas, reduzindo a necessidade de venenos químicos.
-                </div>
-                <div class="solucao-item">
-                    <strong>📚 Educação e fiscalização:</strong> Capacitação de manipuladores, proibição de princípios ativos já banidos na Europa e rígida fiscalização ambiental.
-                </div>
-                <div class="solucao-item">
-                    <strong>🏛️ Políticas públicas:</strong> Notificação de intoxicações e promoção da saúde (iniciativas da Secretaria da Saúde do Paraná).
-                </div>
+                <p id="modal-text"></p>
+                <div class="modal-source" id="modal-source"></div>
             </div>
-        </section>
-
-        <!-- Botão interativo -->
-        <div class="btn-container">
-            <button id="btnBioestimulantes">🌿 Saiba mais sobre bioestimulantes</button>
         </div>
 
-        <!-- ============================================ -->
-        <!-- SEÇÃO DA HQ INTERATIVA -->
-        <!-- ============================================ -->
-        <section class="hq-section">
-            <div class="card hq-card">
-                <div class="hq-header">
-                    <h2>📖 HQ Interativa: O Despertar da Terra</h2>
-                    <p>Uma história em quadrinhos sobre os impactos dos agrotóxicos e as alternativas sustentáveis</p>
-                </div>
-                
-                <div class="comic-box">
-                    <div id="panel-display" class="panel active">
-                        <div class="comic-scene">
-                            <div class="comic-illustration" id="comic-bg"></div>
-                            <div class="bubble">
-                                <p id="dialogue-text"></p>
-                            </div>
-                            <div class="source-info">
-                                📚 Fonte: <span id="source-cite"></span>
-                            </div>
+        <!-- Botões de Navegação Rápida -->
+        <div class="action-buttons">
+            <button class="btn-primary" id="btnBioestimulantes">
+                <i class="fas fa-seedling"></i> Sobre Bioestimulantes
+            </button>
+            <button class="btn-secondary" id="scrollToHQ">
+                <i class="fas fa-book-open"></i> 📖 HQ Interativa
+            </button>
+            <button class="btn-secondary" id="scrollToQuiz">
+                <i class="fas fa-brain"></i> 🧠 Teste seus conhecimentos
+            </button>
+        </div>
+
+        <!-- HQ Section com Lettering -->
+        <section id="hq-section" class="hq-section glass-card">
+            <div class="section-header">
+                <i class="fas fa-comic-book"></i>
+                <h2>HQ Interativa</h2>
+                <span class="lettering-badge">🌿 O Despertar da Terra 🌿</span>
+            </div>
+            <p class="section-subtitle">Uma história em quadrinhos sobre os impactos dos agrotóxicos e as alternativas sustentáveis</p>
+            
+            <div class="comic-container">
+                <div class="comic-panel" id="comic-panel">
+                    <div class="comic-scene" id="comic-scene">
+                        <div class="comic-bubble">
+                            <div class="comic-emoji" id="comic-emoji">🌽</div>
+                            <p id="dialogue-text">Carregando história...</p>
                         </div>
+                        <div class="comic-source" id="source-cite"></div>
                     </div>
-                    
-                    <div class="comic-controls">
-                        <button id="prevComicBtn" class="comic-nav-btn">◀ Anterior</button>
-                        <span id="panel-counter" class="panel-counter">1/8</span>
-                        <button id="nextComicBtn" class="comic-nav-btn">Próximo ▶</button>
-                    </div>
+                </div>
+                <div class="comic-nav">
+                    <button id="prevComicBtn" class="nav-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <span class="panel-counter" id="panel-counter">1/8</span>
+                    <button id="nextComicBtn" class="nav-btn">Próximo <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================ -->
-        <!-- SEÇÃO DO QUIZ - EXPANDIDO -->
-        <!-- ============================================ -->
-        <section class="quiz-section">
-            <div class="card quiz-card">
-                <div class="quiz-header">
-                    <h2>🧠 Teste seus conhecimentos</h2>
-                    <p>Responda as 10 perguntas abaixo sobre agrotóxicos e sustentabilidade</p>
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="quiz-section glass-card">
+            <div class="section-header">
+                <i class="fas fa-question-circle"></i>
+                <h2>Quiz Ambiental</h2>
+                <span class="lettering-badge">🏆 TESTE SEU CONHECIMENTO</span>
+            </div>
+            
+            <div class="quiz-container" id="quiz-container">
+                <div id="question-container">
+                    <div class="quiz-progress">
+                        <span id="question-counter"></span>
+                    </div>
+                    <p id="question-text"></p>
+                    <div id="answer-buttons" class="answer-grid"></div>
                 </div>
                 
-                <div class="quiz-container">
-                    <div id="question-container">
-                        <div class="question-progress">
-                            <span id="question-counter"></span>
-                        </div>
-                        <p id="question-text">Carregando pergunta...</p>
-                        <div id="answer-buttons" class="btn-grid"></div>
-                    </div>
-                    
-                    <div id="controls">
-                        <button id="next-btn" class="next-btn hide">Próxima Pergunta →</button>
-                    </div>
-                    
-                    <div id="result-container" class="hide">
-                        <div class="result-box">
-                            <div class="result-emoji" id="result-emoji">🏆</div>
-                            <h3>Resultado Final</h3>
-                            <p id="score-text"></p>
-                            <div class="result-details" id="result-details"></div>
-                            <button id="restart-quiz" class="restart-btn">🔄 Recomeçar Quiz</button>
-                        </div>
+                <div id="quiz-controls">
+                    <button id="next-btn" class="btn-primary hide">Próxima Pergunta <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div id="result-container" class="hide">
+                    <div class="result-card">
+                        <div id="result-emoji" class="result-emoji">🏆</div>
+                        <h3>Seu Resultado</h3>
+                        <p id="score-text"></p>
+                        <button id="restart-quiz" class="btn-secondary"><i class="fas fa-redo-alt"></i> Recomeçar Quiz</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-<footer>
-    <div class="container">
-            <ul class="refs-list">
-            <li><a href="https://www.embrapa.br/agencia-de-informacao-tecnologica/tematicas/agricultura-e-meio-ambiente/qualidade/dinamica/agrotoxicos-no-brasil" target="_blank" rel="noopener noreferrer">Embrapa - Agrotóxicos no Brasil</a></li>
-            <li><a href="https://www.agricultura.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-11/Apresenta%C3%A7%C3%A3o_Observat%C3%B3rio_CONSEA.pdf" target="_blank" rel="noopener noreferrer">Portal da Agricultura do Paraná</a></li>
-            <li><a href="https://br.boell.org/sites/default/files/agrotoxicos-no-brasil-mobile.pdf" target="_blank" rel="noopener noreferrer">Fundação Heinrich Böll</a></li>
-            <li><a href="https://ciorganicos.com.br/noticia/bioestimulantes-como-alternativa-livre-de-agrotoxicos-para-fortalecer-plantas/" target="_blank" rel="noopener noreferrer">CiOrgânicos - Bioestimulantes</a></li>
-            <li><a href="https://www.saude.pr.gov.br/Pagina/Intoxicacao-Aguda-por-Agrotoxicos" target="_blank" rel="noopener noreferrer">Secretaria da Saúde do Paraná</a></li>
-            <li><a href="https://www.medicina.ufmg.br/agrotoxicos-os-perigos-do-uso-abusivo-ao-meio-ambiente-animais-e-seres-humanos/" target="_blank" rel="noopener noreferrer">UFMG - Impactos dos Agrotóxicos</a></li>
-            <li><a href="https://ainfo.cnptia.embrapa.br/digital/bitstream/item/164063/1/Impactos-de-agrotoxicos-sobre-o-meio-ambiente.pdf" target="_blank" rel="noopener noreferrer">Embrapa - Impactos de agrotóxicos</a></li>
-            <li><a href="https://lerf.eco.br/img/publicacoes/2013_12%20Defensivos%20Alternativos.pdf" target="_blank" rel="noopener noreferrer">Cartilha Defensivos Alternativos (Pesagro-Rio/CREA-RJ)</a></li>
-        </ul>
-        <p class="footer-note">© 2026 - Página criada para conscientização sobre o uso responsável de agrotóxicos e promoção da agroecologia.</p>
-    </div>
-</footer>
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>ECO<span class="highlight">FUTURE</span></span>
+                    <div class="footer-doodle">🌱 ♻️ 🌍</div>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="https://www.embrapa.br/agencia-de-informacao-tecnologica/tematicas/agricultura-e-meio-ambiente/qualidade/dinamica/agrotoxicos-no-brasil" target="_blank" rel="noopener noreferrer">Embrapa - Agrotóxicos no Brasil</a></li>
+                        <li><a href="https://www.agricultura.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-11/Apresenta%C3%A7%C3%A3o_Observat%C3%B3rio_CONSEA.pdf" target="_blank" rel="noopener noreferrer">Portal da Agricultura do Paraná</a></li>
+                        <li><a href="https://ciorganicos.com.br/noticia/bioestimulantes-como-alternativa-livre-de-agrotoxicos-para-fortalecer-plantas/" target="_blank" rel="noopener noreferrer">CiOrgânicos - Bioestimulantes</a></li>
+                        <li><a href="https://www.medicina.ufmg.br/agrotoxicos-os-perigos-do-uso-abusivo-ao-meio-ambiente-animais-e-seres-humanos/" target="_blank" rel="noopener noreferrer">UFMG - Impactos dos Agrotóxicos</a></li>
+                        <li><a href="https://lerf.eco.br/img/publicacoes/2013_12%20Defensivos%20Alternativos.pdf" target="_blank" rel="noopener noreferrer">Cartilha Defensivos Alternativos (Pesagro-Rio)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-tagline">
+                    <p>PLANTE ÁRVORES • SALVE AS ABELHAS • LIMPE A ÁGUA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 - EcoFuture | Conscientização para um futuro sustentável | CAMARGO, Bruna Pichorz de</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
