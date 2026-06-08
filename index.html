@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrotóxicos no Paraná | Impactos e Alternativas</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -94,17 +94,52 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SEÇÃO DO QUIZ - INTEGRADA -->
+        <!-- SEÇÃO DA HQ INTERATIVA -->
+        <!-- ============================================ -->
+        <section class="hq-section">
+            <div class="card hq-card">
+                <div class="hq-header">
+                    <h2>📖 HQ Interativa: O Despertar da Terra</h2>
+                    <p>Uma história em quadrinhos sobre os impactos dos agrotóxicos e as alternativas sustentáveis</p>
+                </div>
+                
+                <div class="comic-box">
+                    <div id="panel-display" class="panel active">
+                        <div class="comic-scene">
+                            <div class="comic-illustration" id="comic-bg"></div>
+                            <div class="bubble">
+                                <p id="dialogue-text"></p>
+                            </div>
+                            <div class="source-info">
+                                📚 Fonte: <span id="source-cite"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comic-controls">
+                        <button id="prevComicBtn" class="comic-nav-btn">◀ Anterior</button>
+                        <span id="panel-counter" class="panel-counter">1/8</span>
+                        <button id="nextComicBtn" class="comic-nav-btn">Próximo ▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SEÇÃO DO QUIZ - EXPANDIDO -->
         <!-- ============================================ -->
         <section class="quiz-section">
             <div class="card quiz-card">
                 <div class="quiz-header">
                     <h2>🧠 Teste seus conhecimentos</h2>
-                    <p>Responda as perguntas abaixo sobre agrotóxicos e sustentabilidade</p>
+                    <p>Responda as 10 perguntas abaixo sobre agrotóxicos e sustentabilidade</p>
                 </div>
                 
                 <div class="quiz-container">
                     <div id="question-container">
+                        <div class="question-progress">
+                            <span id="question-counter"></span>
+                        </div>
                         <p id="question-text">Carregando pergunta...</p>
                         <div id="answer-buttons" class="btn-grid"></div>
                     </div>
@@ -115,8 +150,10 @@
                     
                     <div id="result-container" class="hide">
                         <div class="result-box">
-                            <h3>📊 Resultado Final</h3>
+                            <div class="result-emoji" id="result-emoji">🏆</div>
+                            <h3>Resultado Final</h3>
                             <p id="score-text"></p>
+                            <div class="result-details" id="result-details"></div>
                             <button id="restart-quiz" class="restart-btn">🔄 Recomeçar Quiz</button>
                         </div>
                     </div>
