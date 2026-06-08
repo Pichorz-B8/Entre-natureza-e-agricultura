@@ -889,3 +889,147 @@ header h1 {
         font-size: 0.85rem;
     }
 }
+/* ============================================ */
+/* POLINIZADORES SECTION - NOVO ESTILO */
+/* ============================================ */
+
+.pollinator-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.pollinator-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.pollinator-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+
+.poll-stat {
+    background: rgba(116, 198, 157, 0.12);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    border: 1px solid rgba(116, 198, 157, 0.3);
+}
+
+.poll-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #74c69d, #a7e0c0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.poll-label {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.interdependence-box {
+    background: rgba(45, 106, 79, 0.3);
+    border-left: 4px solid #74c69d;
+    padding: 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.interdependence-box i {
+    font-size: 1.5rem;
+    color: #74c69d;
+}
+
+.pollinator-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
+    padding: 1.5rem;
+}
+
+.icon-bee, .icon-butterfly, .icon-hummingbird, .icon-bat {
+    font-size: 2.5rem;
+    text-align: center;
+    filter: drop-shadow(0 0 5px rgba(116, 198, 157, 0.5));
+    transition: transform 0.3s;
+}
+
+.icon-bee:hover, .icon-butterfly:hover, .icon-hummingbird:hover, .icon-bat:hover {
+    transform: scale(1.1);
+}
+
+.warning-chain {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 100, 80, 0.15);
+    border-radius: 40px;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #ff6b4a;
+}
+
+.warning-chain i {
+    color: #ff9f80;
+    margin-right: 8px;
+}
+
+.pollinator-alert {
+    background: rgba(255, 100, 80, 0.1);
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    border: 1px dashed #ff6b4a;
+}
+
+.pollinator-alert i {
+    font-size: 1.2rem;
+    color: #ff9f80;
+}
+
+.pollinator-alert strong {
+    color: #ff9f80;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .pollinator-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .pollinator-icons {
+        order: -1;
+    }
+    
+    .pollinator-stats {
+        flex-direction: column;
+    }
+    
+    .poll-stat {
+        min-width: auto;
+    }
+}

@@ -71,6 +71,12 @@ const conceptData = {
         text: "O uso indiscriminado de agrotóxicos contamina recursos hídricos por lixiviação, causa desequilíbrio ecológico (mortandade de polinizadores como abelhas) e degrada o solo e o ar através da deriva (vento que desvia o agrotóxico do alvo).",
         source: "Belchior et al. - Impactos de agrotóxicos"
     },
+        // Polinizadores (novo)
+    polinizadores: {
+        title: "🐝 Polinizadores: A Teia da Vida",
+        text: "✅ A interdependência é total:\n\n🌼 As plantas oferecem néctar e pólen como alimento.\n\n🐝 Os polinizadores (abelhas, borboletas, beija-flores, morcegos) transportam o pólen de uma flor para outra, garantindo a reprodução das plantas.\n\n❌ Quando os agrotóxicos matam os polinizadores, a cadeia se quebra: menos frutos, menos sementes, menos alimentos, colapso dos ecossistemas.\n\n",
+        source: "Embrapa / FAO - Organização das Nações Unidas para Alimentação e Agricultura"
+    },
     
     // Soluções
     alternativos: {
