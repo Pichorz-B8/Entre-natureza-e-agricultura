@@ -219,10 +219,11 @@ const hqData = [
     { text: "📈 'O consumo de ingredientes ativos subiu 700% nos últimos 40 anos! Enquanto a área plantada cresceu só 78%...'", cite: "Embrapa", bgColor: "#2a4a1a", emoji: "📈" },
     { text: "💧 'O veneno escorre pela chuva e se acumula na cadeia alimentar. Isso se chama BIOMAGNIFICAÇÃO!'", cite: "Belchior et al.", bgColor: "#1a3a4a", emoji: "💧" },
     { text: "👶 'Estudos encontraram agrotóxicos no sangue, na urina e até no LEITE MATERNO!'", cite: "UFMG", bgColor: "#4a2a2a", emoji: "👶" },
+    { text: "👩‍🌾 'Agricultores familiares e trabalhadores rurais sofrem com intoxicações e doenças crônicas.'", cite: "Fiocruz", bgColor: "#446028", emoji: "👩‍🌾" },
     { text: "🐝 'As abelhas estão morrendo! Sem polinizadores, perdemos 70% dos alimentos!'", cite: "Embrapa", bgColor: "#3a4a1a", emoji: "🐝" },
     { text: "🌿 'Podemos usar BIOESTIMULANTES! Aumentam a energia vital da planta naturalmente!'", cite: "CiOrgânicos", bgColor: "#1a4a3a", emoji: "🌿" },
     { text: "🧪 'CALDA BORDALESA! Um fungicida natural de baixa toxicidade!'", cite: "Pesagro-Rio", bgColor: "#3a3a4a", emoji: "🧪" },
-    { text: "🌎 'Transição agroecológica é possível! Alimentos SADIOS sem destruir o planeta!'", cite: "SESA-PR", bgColor: "#1a5a3a", emoji: "🌎" },
+    { text: "🌎 'A transição é possível: com educação, políticas públicas e consumo consciente, podemos salvar a Terra!'", cite: "SESA-PR", bgColor: "#1a5a3a", emoji: "🌎" },
 ];
 
 let currentComicIndex = 0;
