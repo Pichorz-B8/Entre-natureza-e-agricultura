@@ -141,7 +141,7 @@ li {
 }
 
 /* ============================================ */
-/* ESTILOS DA HQ */
+/* ESTILOS DA HQ - CORRIGIDOS */
 /* ============================================ */
 .hq-section {
     margin: 2rem 0;
@@ -179,21 +179,23 @@ li {
 .comic-scene {
     position: relative;
     min-height: 450px;
-    background-size: cover;
-    background-position: center;
     border-radius: 12px;
     transition: all 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.comic-illustration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
-}
+/* Cores específicas para cada cenário da HQ - CORRIGIDO */
+.scene-1 { background-color: #d4edda; }
+.scene-2 { background-color: #fff3cd; }
+.scene-3 { background-color: #cce5ff; }
+.scene-4 { background-color: #f8d7da; }
+.scene-5 { background-color: #ffe5b4; }
+.scene-6 { background-color: #d1ecf1; }
+.scene-7 { background-color: #e2e3e5; }
+.scene-8 { background-color: #d4edda; }
 
 .bubble {
     background: white;
@@ -211,6 +213,7 @@ li {
     line-height: 1.5;
     font-weight: 500;
     color: #1e2a2e;
+    margin: 0;
 }
 
 .bubble::before {
@@ -219,6 +222,13 @@ li {
     left: 20px;
     top: -15px;
     font-size: 1.5rem;
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .source-info {
@@ -260,8 +270,9 @@ li {
 }
 
 .comic-nav-btn:disabled {
-    background: #ccc;
+    background: #cccccc;
     cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .panel-counter {
@@ -438,7 +449,7 @@ li {
 /* Rodapé */
 footer {
     background: #1e2a2e;
-    color: #ddd;
+    color: #dddddd;
     padding: 2rem 0;
     margin-top: 2rem;
     font-size: 0.9rem;
@@ -474,34 +485,126 @@ footer {
     opacity: 0.7;
 }
 
-/* Responsividade */
+/* ============================================ */
+/* RESPONSIVIDADE - CORRIGIDA */
+/* ============================================ */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
     }
+    
     .card {
         padding: 1.2rem;
     }
+    
     h2 {
         font-size: 1.5rem;
     }
+    
     .btn-grid {
         grid-template-columns: 1fr;
     }
+    
     .btn-grid button {
         padding: 12px;
     }
+    
     #question-text {
         font-size: 1.1rem;
     }
+    
     .comic-box {
         padding: 12px;
     }
+    
     .bubble p {
         font-size: 0.85rem;
     }
+    
     .comic-nav-btn {
         padding: 8px 16px;
         font-size: 0.9rem;
+    }
+    
+    .comic-scene {
+        min-height: 350px;
+    }
+    
+    .panel {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .comic-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .bubble {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .bubble::before {
+        left: 10px;
+        top: -12px;
+        font-size: 1.2rem;
+        width: 24px;
+        height: 24px;
+    }
+}
+/* ============================================ */
+/* ESTILOS ADICIONAIS PARA LINKS */
+/* ============================================ */
+
+.refs-list a {
+    color: #a7e0c0;
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+    word-break: break-word;
+}
+
+.refs-list a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.refs-list a:visited {
+    color: #8bc9a8;
+}
+
+/* Garantir que links abram em nova aba corretamente */
+.refs-list a[target="_blank"] {
+    position: relative;
+}
+
+.refs-list a[target="_blank"]::after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Links do rodapé em dispositivos móveis */
+@media (max-width: 768px) {
+    .refs-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .refs-list li {
+        margin-bottom: 0.25rem;
+    }
+    
+    .refs-list a {
+        font-size: 0.85rem;
+        display: inline-block;
+        padding: 4px 0;
     }
 }

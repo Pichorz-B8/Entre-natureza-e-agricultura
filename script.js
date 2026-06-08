@@ -1,10 +1,15 @@
 // ============================================
-// BOTÃO BIOESTIMULANTES
+// INICIALIZAÇÃO SEGURA - Aguarda DOM carregar
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('btnBioestimulantes');
-    if (btn) {
-        btn.addEventListener('click', function() {
+    console.log("🌿 Página carregada | Agrotóxicos no Paraná - 16% do consumo nacional");
+    
+    // ============================================
+    // BOTÃO BIOESTIMULANTES
+    // ============================================
+    const btnBioestimulantes = document.getElementById('btnBioestimulantes');
+    if (btnBioestimulantes) {
+        btnBioestimulantes.addEventListener('click', function() {
             alert(
                 "🌱 BIOESTIMULANTES E DEFENSIVOS ALTERNATIVOS\n\n" +
                 "De acordo com a cartilha 'Defensivos Alternativos' (Pesagro-Rio/CREA-RJ):\n\n" +
@@ -15,14 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 "👉 Pratique a transição agroecológica: saúde do solo, policultivo e defensivos de baixo impacto!"
             );
         });
+    } else {
+        console.warn("⚠️ Botão 'btnBioestimulantes' não encontrado");
     }
     
-    console.log("🌿 Página carregada | Agrotóxicos no Paraná - 16% do consumo nacional");
+    // ============================================
+    // Inicializar HQ e Quiz (funções definidas abaixo)
+    // ============================================
+    initHQ();
+    initQuiz();
 });
 
 // ============================================
-// HQ INTERATIVA - 8 CENAS EXPANDIDAS
+// HQ INTERATIVA - 8 CENAS
 // ============================================
+
 const hqData = [
     {
         title: "🌽 Cena 1: O Cenário no Paraná",
@@ -83,52 +95,67 @@ const hqData = [
 ];
 
 let currentComicIndex = 0;
-const comicBg = document.getElementById('comic-bg');
-const dialogueText = document.getElementById('dialogue-text');
-const sourceCite = document.getElementById('source-cite');
-const panelCounter = document.getElementById('panel-counter');
-const prevComicBtn = document.getElementById('prevComicBtn');
-const nextComicBtn = document.getElementById('nextComicBtn');
 
-function updateComic() {
-    const data = hqData[currentComicIndex];
-    
-    // Atualizar o balão de diálogo com o ícone
-    dialogueText.innerHTML = data.text;
-    sourceCite.innerText = data.cite;
-    
-    // Atualizar fundo colorido
+function initHQ() {
+    // Verificar se os elementos da HQ existem
+    const dialogueText = document.getElementById('dialogue-text');
+    const sourceCite = document.getElementById('source-cite');
+    const panelCounter = document.getElementById('panel-counter');
+    const prevComicBtn = document.getElementById('prevComicBtn');
+    const nextComicBtn = document.getElementById('nextComicBtn');
     const comicScene = document.querySelector('.comic-scene');
-    comicScene.style.backgroundColor = data.bgColor;
-    comicScene.style.minHeight = "400px";
-    comicScene.style.position = "relative";
     
-    // Atualizar contador
-    panelCounter.innerText = `${currentComicIndex + 1}/${hqData.length}`;
-    
-    // Gerenciar botões
-    if (prevComicBtn) prevComicBtn.disabled = currentComicIndex === 0;
-    if (nextComicBtn) nextComicBtn.disabled = currentComicIndex === hqData.length - 1;
-}
-
-function changeComicPanel(step) {
-    const newIndex = currentComicIndex + step;
-    if (newIndex >= 0 && newIndex < hqData.length) {
-        currentComicIndex = newIndex;
-        updateComic();
+    // Verificar se todos os elementos existem
+    if (!comicScene || !dialogueText || !sourceCite || !panelCounter) {
+        console.warn("⚠️ Elementos da HQ não encontrados. Verifique se o HTML contém a seção da HQ.");
+        return;
     }
+    
+    function updateComic() {
+        const data = hqData[currentComicIndex];
+        
+        // Atualizar o texto do diálogo e fonte
+        dialogueText.innerHTML = data.text;
+        sourceCite.innerText = data.cite;
+        
+        // Atualizar fundo colorido diretamente
+        comicScene.style.backgroundColor = data.bgColor;
+        comicScene.style.minHeight = "400px";
+        comicScene.style.position = "relative";
+        
+        // Atualizar contador
+        panelCounter.innerText = `${currentComicIndex + 1}/${hqData.length}`;
+        
+        // Gerenciar botões (verificar se existem antes de usar)
+        if (prevComicBtn) prevComicBtn.disabled = currentComicIndex === 0;
+        if (nextComicBtn) nextComicBtn.disabled = currentComicIndex === hqData.length - 1;
+    }
+    
+    function changeComicPanel(step) {
+        const newIndex = currentComicIndex + step;
+        if (newIndex >= 0 && newIndex < hqData.length) {
+            currentComicIndex = newIndex;
+            updateComic();
+        }
+    }
+    
+    // Adicionar event listeners (verificar se os botões existem)
+    if (prevComicBtn) {
+        prevComicBtn.addEventListener('click', () => changeComicPanel(-1));
+    }
+    if (nextComicBtn) {
+        nextComicBtn.addEventListener('click', () => changeComicPanel(1));
+    }
+    
+    // Inicializar primeira cena
+    updateComic();
+    console.log("✅ HQ inicializada com sucesso!");
 }
-
-// Event listeners da HQ
-if (prevComicBtn) prevComicBtn.addEventListener('click', () => changeComicPanel(-1));
-if (nextComicBtn) nextComicBtn.addEventListener('click', () => changeComicPanel(1));
-
-// Inicializar HQ
-updateComic();
 
 // ============================================
 // QUIZ EXPANDIDO - 10 PERGUNTAS
 // ============================================
+
 const quizQuestions = [
     {
         question: "Qual a porcentagem do consumo nacional de agrotóxicos atribuída ao estado do Paraná?",
@@ -222,41 +249,206 @@ const quizQuestions = [
     }
 ];
 
+// Variáveis do quiz
 let currentQuestionIndex = 0;
 let userScore = 0;
 let userAnswers = [];
+let quizInitialized = false;
 
-const questionTextEl = document.getElementById('question-text');
-const answerButtonsContainer = document.getElementById('answer-buttons');
-const nextButton = document.getElementById('next-btn');
-const resultContainer = document.getElementById('result-container');
-const questionContainer = document.getElementById('question-container');
-const controlsDiv = document.getElementById('controls');
-const scoreTextEl = document.getElementById('score-text');
-const restartButton = document.getElementById('restart-quiz');
-const questionCounter = document.getElementById('question-counter');
-const resultDetails = document.getElementById('result-details');
-const resultEmoji = document.getElementById('result-emoji');
-
-function startQuiz() {
-    currentQuestionIndex = 0;
-    userScore = 0;
-    userAnswers = [];
-    resultContainer.classList.add('hide');
-    questionContainer.classList.remove('hide');
-    controlsDiv.classList.remove('hide');
-    if (nextButton) nextButton.classList.add('hide');
-    nextButton.innerText = "Próxima Pergunta →";
-    showQuestion();
-}
-
-function showQuestion() {
-    resetState();
+function initQuiz() {
+    // Verificar se os elementos do quiz existem
+    const questionTextEl = document.getElementById('question-text');
+    const answerButtonsContainer = document.getElementById('answer-buttons');
+    const nextButton = document.getElementById('next-btn');
+    const restartButton = document.getElementById('restart-quiz');
     
-    if (!quizQuestions[currentQuestionIndex]) {
-        showResults();
+    if (!questionTextEl || !answerButtonsContainer) {
+        console.warn("⚠️ Elementos do quiz não encontrados. Verifique se o HTML contém a seção do quiz.");
         return;
     }
     
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    questionTextEl.innerText = currentQuestion.question;
+    // Só inicializar uma vez
+    if (quizInitialized) return;
+    quizInitialized = true;
+    
+    function resetQuizState() {
+        while (answerButtonsContainer.firstChild) {
+            answerButtonsContainer.removeChild(answerButtonsContainer.firstChild);
+        }
+    }
+    
+    function showQuestion() {
+        resetQuizState();
+        
+        if (!quizQuestions[currentQuestionIndex]) {
+            showResults();
+            return;
+        }
+        
+        const currentQuestion = quizQuestions[currentQuestionIndex];
+        questionTextEl.innerText = currentQuestion.question;
+        
+        // Atualizar contador da pergunta
+        const questionCounter = document.getElementById('question-counter');
+        if (questionCounter) {
+            questionCounter.innerText = `Pergunta ${currentQuestionIndex + 1} de ${quizQuestions.length}`;
+        }
+        
+        // Embaralhar respostas
+        const shuffledAnswers = [...currentQuestion.answers].sort(() => Math.random() - 0.5);
+        
+        shuffledAnswers.forEach(answer => {
+            const button = document.createElement('button');
+            button.innerText = answer.text;
+            if (answer.correct) button.dataset.correct = "true";
+            button.addEventListener('click', () => selectAnswer(button, answer.correct));
+            answerButtonsContainer.appendChild(button);
+        });
+    }
+    
+    function selectAnswer(selectedButton, isCorrect) {
+        if (isCorrect) {
+            selectedButton.classList.add('correct');
+            userScore++;
+            userAnswers.push({ correct: true });
+        } else {
+            selectedButton.classList.add('wrong');
+            userAnswers.push({ correct: false });
+        }
+        
+        // Desabilitar todos os botões e mostrar resposta correta
+        Array.from(answerButtonsContainer.children).forEach(button => {
+            if (button.dataset.correct === "true") {
+                button.classList.add('correct');
+            }
+            button.disabled = true;
+        });
+        
+        // Mostrar próximo botão
+        if (nextButton) {
+            nextButton.classList.remove('hide');
+            if (currentQuestionIndex + 1 >= quizQuestions.length) {
+                nextButton.innerText = "Ver Resultado →";
+            }
+        }
+    }
+    
+    function showResults() {
+        const questionContainer = document.getElementById('question-container');
+        const controlsDiv = document.getElementById('controls');
+        const resultContainer = document.getElementById('result-container');
+        const scoreTextEl = document.getElementById('score-text');
+        const resultDetails = document.getElementById('result-details');
+        const resultEmoji = document.getElementById('result-emoji');
+        
+        if (questionContainer) questionContainer.classList.add('hide');
+        if (controlsDiv) controlsDiv.classList.add('hide');
+        if (resultContainer) resultContainer.classList.remove('hide');
+        
+        const percentage = (userScore / quizQuestions.length) * 100;
+        let performanceMessage = "";
+        let emoji = "";
+        
+        if (percentage === 100) {
+            performanceMessage = "Excelente! Você domina completamente o assunto sobre agrotóxicos e sustentabilidade!";
+            emoji = "🏆🌿";
+        } else if (percentage >= 70) {
+            performanceMessage = "Muito bom! Você tem um ótimo conhecimento. Continue se informando!";
+            emoji = "👍📚";
+        } else if (percentage >= 50) {
+            performanceMessage = "Bom trabalho! Que tal revisar o conteúdo da página para ir além?";
+            emoji = "🌱📖";
+        } else {
+            performanceMessage = "Que tal dar mais uma olhada no conteúdo? O conhecimento é o primeiro passo para a mudança!";
+            emoji = "💚🌍";
+        }
+        
+        if (resultEmoji) resultEmoji.innerText = emoji;
+        if (scoreTextEl) {
+            scoreTextEl.innerHTML = `
+                <span style="font-size: 2.5rem; display: block; margin-bottom: 10px;">${userScore}/${quizQuestions.length}</span>
+                <span style="font-size: 1rem;">${performanceMessage}</span>
+            `;
+        }
+        if (resultDetails) {
+            resultDetails.innerHTML = `
+                <p>✅ Você acertou ${userScore} de ${quizQuestions.length} perguntas.</p>
+                <p>💡 Cada erro é uma oportunidade de aprender mais sobre práticas sustentáveis!</p>
+            `;
+        }
+    }
+    
+    function nextQuestion() {
+        if (currentQuestionIndex + 1 < quizQuestions.length) {
+            currentQuestionIndex++;
+            showQuestion();
+            if (nextButton) nextButton.classList.add('hide');
+            nextButton.innerText = "Próxima Pergunta →";
+        } else {
+            showResults();
+        }
+    }
+    
+    function restartQuiz() {
+        currentQuestionIndex = 0;
+        userScore = 0;
+        userAnswers = [];
+        
+        const resultContainer = document.getElementById('result-container');
+        const questionContainer = document.getElementById('question-container');
+        const controlsDiv = document.getElementById('controls');
+        
+        if (resultContainer) resultContainer.classList.add('hide');
+        if (questionContainer) questionContainer.classList.remove('hide');
+        if (controlsDiv) controlsDiv.classList.remove('hide');
+        if (nextButton) nextButton.classList.add('hide');
+        nextButton.innerText = "Próxima Pergunta →";
+        
+        showQuestion();
+    }
+    
+    // Adicionar event listeners
+    if (nextButton) {
+        // Remover listener antigo para evitar duplicação
+        const newNextButton = nextButton.cloneNode(true);
+        nextButton.parentNode.replaceChild(newNextButton, nextButton);
+        newNextButton.addEventListener('click', nextQuestion);
+        window.nextButtonRef = newNextButton;
+    }
+    
+    if (restartButton) {
+        const newRestartButton = restartButton.cloneNode(true);
+        restartButton.parentNode.replaceChild(newRestartButton, restartButton);
+        newRestartButton.addEventListener('click', restartQuiz);
+    }
+    
+    // Iniciar quiz
+    showQuestion();
+    console.log("✅ Quiz inicializado com sucesso!");
+}
+
+// ============================================
+// GARANTIR QUE LINKS EXTERNOS ABRAM EM NOVA ABA
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os links que apontam para sites externos
+    const allLinks = document.querySelectorAll('a');
+    
+    allLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Se o link começar com http:// ou https:// e NÃO for o próprio domínio
+        if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+            // Verifica se NÃO é o mesmo domínio (evitar abrir links internos em nova aba)
+            const currentDomain = window.location.hostname;
+            const linkDomain = new URL(href).hostname;
+            
+            if (linkDomain !== currentDomain && linkDomain !== 'localhost' && !linkDomain.includes('127.0.0.1')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        }
+    });
+    
+    console.log("✅ Links externos configurados para abrir em nova aba");
+});
