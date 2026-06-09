@@ -2,7 +2,7 @@
 // AGUARDAR DOM CARREGAR
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("🌿 EcoFuture - Site carregado com sucesso!");
+    console.log("🌿 De Olho na Suatentabilidade - Site carregado com sucesso!");
     
     // Inicializar animações e funcionalidades
     animateNumbers();
@@ -270,7 +270,7 @@ function initHQ() {
     }
     
     updateComic();
-    console.log("✅ HQ inicializada com sucesso!");
+    console.log("✅ Frases inicializadas com sucesso!");
 }
 
 // ============================================
